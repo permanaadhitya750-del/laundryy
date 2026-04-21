@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Queen Laundry Dramaga | Premium Laundry Service</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Preloader -->
+    <div class="preloader" id="preloader">
+        <div class="preloader-spinner"></div>
+        <div class="preloader-text">Queen Laundry</div>
+    </div>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <i class="fas fa-crown"></i>
+                <span>Queen <span class="highlight">Laundry</span></span>
+            </div>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home" class="nav-link active">Home</a></li>
+                <li><a href="#layanan" class="nav-link">Layanan</a></li>
+                <li><a href="#tracking" class="nav-link">Tracking</a></li>
+                <li><a href="#kontak" class="nav-link">Kontak</a></li>
+            </ul>
+            <div class="menu-btn" id="menuBtn">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <div class="hero-badge">
+                    <span class="dot"></span>
+                    Laundry Premium Terpercaya
+                </div>
+                <h1 class="hero-title">
+                    Cucian Bersih, 
+                    <span class="gradient">Wangi & Rapi</span>
+                </h1>
+                <p class="hero-desc">
+                    Queen Laundry Dramaga — solusi laundry cepat, higienis, dan terpercaya 
+                    untuk seluruh area Dramaga. Gratis antar jemput!
+                </p>
+                <div class="hero-buttons">
+                    <button class="btn-primary" id="trackBtnHero">
+                        Cek Status Laundry <i class="fas fa-arrow-right"></i>
+                    </button>
+                    <button class="btn-outline" id="waHeroBtn">
+                        <i class="fab fa-whatsapp"></i> Pesan Sekarang
+                    </button>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat">
+                        <span class="stat-number">500+</span>
+                        <span class="stat-label">Pelanggan</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">98%</span>
+                        <span class="stat-label">Kepuasan</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">2 Jam</span>
+                        <span class="stat-label">Express</span>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="floating-icon icon1"><i class="fas fa-tshirt"></i></div>
+                <div class="floating-icon icon2"><i class="fas fa-jug-detergent"></i></div>
+                <div class="floating-icon icon3"><i class="fas fa-washing-machine"></i></div>
+                <div class="floating-icon icon4"><i class="fas fa-iron"></i></div>
+                <img src="https://cdn-icons-png.flaticon.com/512/3145/3145762.png" alt="Laundry" class="hero-img">
+            </div>
+        </div>
+    </section>
+
+    <!-- Layanan Section -->
+    <section id="layanan" class="services">
+        <div class="section-header">
+            <span class="section-tag">✦ Layanan Kami ✦</span>
+            <h2>Pilih Layanan Terbaik</h2>
+            <p>Harga transparan per kilogram dengan kualitas terjamin</p>
+        </div>
+        <div class="services-grid">
+            <div class="service-card" data-service="Cuci Kering" data-price="8000">
+                <div class="card-icon"><i class="fas fa-wind"></i></div>
+                <h3>Cuci Kering</h3>
+                <p>Cuci + kering sempurna, wangi tahan lama, lipat rapi.</p>
+                <div class="price">Rp <span class="price-value">8.000</span> /kg</div>
+                <button class="card-btn serviceBtn">Pilih Layanan</button>
+            </div>
+            <div class="service-card popular" data-service="Cuci Setrika" data-price="11000">
+                <div class="popular-badge">Populer</div>
+                <div class="card-icon"><i class="fas fa-iron"></i></div>
+                <h3>Cuci Setrika</h3>
+                <p>Rapih, mulus, dan harum siap pakai, bebas kusut.</p>
+                <div class="price">Rp <span class="price-value">11.000</span> /kg</div>
+                <button class="card-btn serviceBtn">Pilih Layanan</button>
+            </div>
+            <div class="service-card" data-service="Express 4 Jam" data-price="18000">
+                <div class="card-icon"><i class="fas fa-bolt"></i></div>
+                <h3>Express 4 Jam</h3>
+                <p>Khusus cuci kilat 4 jam selesai (biaya tambahan).</p>
+                <div class="price">Rp <span class="price-value">18.000</span> /kg</div>
+                <button class="card-btn serviceBtn">Pilih Layanan</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tracking Section dengan Detail Lengkap -->
+    <section id="tracking" class="tracking">
+        <div class="section-header">
+            <span class="section-tag">✦ Lacak Laundry ✦</span>
+            <h2>Cek Status Pesanan</h2>
+            <p>Masukkan ID Laundry atau Nama Customer Anda</p>
+        </div>
+        <div class="tracking-card">
+            <div class="track-input">
+                <i class="fas fa-search"></i>
+                <input type="text" id="trackInput" placeholder="Contoh: QL-001 atau Nama Customer">
+                <button id="trackBtn">Lacak</button>
+            </div>
+            
+            <!-- Hasil Tracking dengan Detail Lengkap -->
+            <div id="trackResult" class="track-result hidden">
+                <!-- Header Status -->
+                <div class="result-header">
+                    <div class="result-icon" id="resultIcon">
+                        <i class="fas fa-basket-shopping"></i>
+                    </div>
+                    <div class="result-info">
+                        <h3 id="orderName">-</h3>
+                        <span class="status-badge" id="orderStatus">Antri</span>
+                    </div>
+                </div>
+                
+                <!-- Progress Bar -->
+                <div class="progress-area">
+                    <div class="progress-steps">
+                        <div class="step" data-step="antri">
+                            <div class="step-circle"><i class="fas fa-basket-shopping"></i></div>
+                            <span>Antri</span>
+                        </div>
+                        <div class="step-line"></div>
+                        <div class="step" data-step="diproses">
+                            <div class="step-circle"><i class="fas fa-washing-machine"></i></div>
+                            <span>Diproses</span>
+                        </div>
+                        <div class="step-line"></div>
+                        <div class="step" data-step="selesai">
+                            <div class="step-circle"><i class="fas fa-check-circle"></i></div>
+                            <span>Selesai</span>
+                        </div>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="progressFill"></div>
+                    </div>
+                </div>
+                
+                <!-- Detail Informasi Lengkap -->
+                <div class="detail-info-section">
+                    <h4><i class="fas fa-info-circle"></i> Detail Pesanan</h4>
+                    <div class="detail-grid">
+                        <div class="detail-item">
+                            <div class="detail-label">
+                                <i class="fas fa-barcode"></i> ID Laundry
+                            </div>
+                            <div class="detail-value" id="detailId">-</div>
+                        </div>
+                        <div class="detail-item">
+                            <div class="detail-label">
+                                <i class="fas fa-user"></i> Nama Customer
+                            </div>
+                            <div class="detail-value" id="detailNama">-</div>
+                        </div>
+                        <div class="detail-item">
+                            <div class="detail-label">
+                                <i class="fas fa-phone"></i> No. Telepon
+                            </div>
+                            <div class="detail-value" id="detailPhone">-</div>
+                        </div>
+                        <div class="detail-item">
+                            <div class="detail-label">
+                                <i class="fas fa-calendar"></i> Tanggal Order
+                            </div>
+                            <div class="detail-value" id="detailTanggal">-</div>
+                        </div>
+                        <div class="detail-item">
+                            <div class="detail-label">
+                                <i class="fas fa-clock"></i> Estimasi Selesai
+                            </div>
+                            <div class="detail-value" id="detailEstimasi">-</div>
+                        </div>
+                        <div class="detail-item">
+                            <div class="detail-label">
+                                <i class="fas fa-tag"></i> Layanan
+                            </div>
+                            <div class="detail-value" id="detailLayanan">-</div>
+                        </div>
+                        <div class="detail-item">
+                            <div class="detail-label">
+                                <i class="fas fa-weight-hanging"></i> Berat (kg)
+                            </div>
+                            <div class="detail-value" id="detailBerat">-</div>
+                        </div>
+                        <div class="detail-item">
+                            <div class="detail-label">
+                                <i class="fas fa-money-bill-wave"></i> Harga/kg
+                            </div>
+                            <div class="detail-value" id="detailHargaPerKg">-</div>
+                        </div>
+                        <div class="detail-item highlight">
+                            <div class="detail-label">
+                                <i class="fas fa-calculator"></i> Total Biaya
+                            </div>
+                            <div class="detail-value" id="detailTotal">-</div>
+                        </div>
+                        <div class="detail-item">
+                            <div class="detail-label">
+                                <i class="fas fa-credit-card"></i> Status Pembayaran
+                            </div>
+                            <div class="detail-value" id="detailPayment">-</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Catatan -->
+                <div class="note-section" id="noteSection">
+                    <i class="fas fa-sticky-note"></i>
+                    <div>
+                        <strong>Catatan:</strong>
+                        <p id="orderNote">-</p>
+                    </div>
+                </div>
+                
+                <!-- Ilustrasi -->
+                <div class="result-illustration">
+                    <img id="statusImg" src="https://cdn-icons-png.flaticon.com/512/3106/3106773.png" alt="status">
+                    <p id="statusCaption">Menunggu antrian</p>
+                </div>
+            </div>
+            
+            <!-- Not Found -->
+            <div id="trackNotFound" class="not-found hidden">
+                <i class="fas fa-search"></i>
+                <h4>Order Tidak Ditemukan</h4>
+                <p>Silakan cek kembali ID Laundry atau Nama Anda</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Keunggulan Section -->
+    <section class="features">
+        <div class="section-header">
+            <span class="section-tag">✦ Mengapa Kami? ✦</span>
+            <h2>Keunggulan Queen Laundry</h2>
+        </div>
+        <div class="features-grid">
+            <div class="feature">
+                <div class="feature-icon"><i class="fas fa-clock"></i></div>
+                <h4>Cepat & Tepat Waktu</h4>
+                <p>Proses laundry cepat tanpa mengurangi kualitas</p>
+            </div>
+            <div class="feature">
+                <div class="feature-icon"><i class="fas fa-leaf"></i></div>
+                <h4>Ramah Lingkungan</h4>
+                <p>Menggunakan deterjen eco-friendly</p>
+            </div>
+            <div class="feature">
+                <div class="feature-icon"><i class="fas fa-truck"></i></div>
+                <h4>Gratis Antar Jemput</h4>
+                <p>Untuk area Dramaga dan sekitarnya</p>
+            </div>
+            <div class="feature">
+                <div class="feature-icon"><i class="fas fa-hand-sparkles"></i></div>
+                <h4>Hygienis</h4>
+                <p>Proses sterilisasi dan pewangi premium</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Kontak Section -->
+    <section id="kontak" class="contact">
+        <div class="contact-grid">
+            <div class="contact-info">
+                <div class="contact-header">
+                    <i class="fas fa-headset"></i>
+                    <h3>Hubungi Kami</h3>
+                </div>
+                <p>Punya pertanyaan? Tim kami siap membantu</p>
+                <div class="contact-item">
+                    <i class="fab fa-whatsapp"></i>
+                    <div>
+                        <strong>WhatsApp</strong>
+                        <span>+62 812 3456 7890</span>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-phone-alt"></i>
+                    <div>
+                        <strong>Telepon</strong>
+                        <span>(0251) 1234567</span>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <div>
+                        <strong>Email</strong>
+                        <span>queenlaundry@dramaga.com</span>
+                    </div>
+                </div>
+                <button class="wa-btn" id="waContactBtn">
+                    <i class="fab fa-whatsapp"></i> Chat Admin
+                </button>
+            </div>
+            <div class="map-box">
+                <h3><i class="fas fa-location-dot"></i> Lokasi Kami</h3>
+                <div class="map-container">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3963.0411717056616!2d106.744415!3d-6.665527!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69c9e8a7f1f2c5%3A0x3b2b2b2b2b2b2b!2sQueen%20Laundry%20Dramaga!5e0!3m2!1sid!2sid!4v1650000000000!5m2!1sid!2sid" width="100%" height="200" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+                <p><i class="fas fa-map-pin"></i> Jl. Raya Dramaga No.88, Dramaga, Bogor</p>
+                <p><i class="fas fa-clock"></i> Buka Setiap Hari: 08.00 - 21.00</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">
+                <i class="fas fa-crown"></i>
+                <span>Queen Laundry Dramaga</span>
+            </div>
+            <p>Bersih, Cepat, & Terpercaya</p>
+            <div class="social">
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-tiktok"></i></a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2025 Queen Laundry Dramaga. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Floating WhatsApp -->
+    <div class="floating-wa" id="floatingWA">
+        <i class="fab fa-whatsapp"></i>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

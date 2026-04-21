@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard | Queen Laundry</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+    <!-- Login Page -->
+    <div class="login-page" id="loginPage">
+        <div class="login-card">
+            <div class="login-icon"><i class="fas fa-crown"></i></div>
+            <h2>Admin Queen Laundry</h2>
+            <p>Silakan login untuk mengelola pesanan</p>
+            <input type="text" id="loginUser" placeholder="Username">
+            <input type="password" id="loginPass" placeholder="Password">
+            <button id="loginBtn">Login</button>
+            <div class="demo">Demo: admin / queen123</div>
+        </div>
+    </div>
+
+    <!-- Dashboard -->
+    <div class="dashboard" id="dashboard" style="display: none;">
+        <div class="sidebar">
+            <div class="sidebar-header">
+                <i class="fas fa-crown"></i>
+                <h3>Queen Laundry</h3>
+                <p>Admin Panel</p>
+            </div>
+            <div class="sidebar-menu">
+                <button class="menu-item active" data-tab="dashboard"><i class="fas fa-chart-line"></i> Dashboard</button>
+                <button class="menu-item" data-tab="orders"><i class="fas fa-box"></i> Daftar Order</button>
+                <button class="menu-item" data-tab="add"><i class="fas fa-plus"></i> Tambah Order</button>
+            </div>
+            <button id="logoutBtn" class="logout-btn"><i class="fas fa-sign-out-alt"></i> Logout</button>
+        </div>
+
+        <div class="main-content">
+            <div class="top-bar">
+                <h1 id="pageTitle">Dashboard</h1>
+                <div class="date" id="currentDate"></div>
+            </div>
+
+            <!-- Dashboard Tab -->
+            <div id="dashboardTab" class="tab active">
+                <div class="stats">
+                    <div class="stat-card"><div class="stat-icon purple"><i class="fas fa-box"></i></div><div class="stat-detail"><h3 id="totalOrders">0</h3><p>Total Order</p></div></div>
+                    <div class="stat-card"><div class="stat-icon yellow"><i class="fas fa-clock"></i></div><div class="stat-detail"><h3 id="antriCount">0</h3><p>Antri</p></div></div>
+                    <div class="stat-card"><div class="stat-icon blue"><i class="fas fa-washing-machine"></i></div><div class="stat-detail"><h3 id="diprosesCount">0</h3><p>Diproses</p></div></div>
+                    <div class="stat-card"><div class="stat-icon green"><i class="fas fa-check"></i></div><div class="stat-detail"><h3 id="selesaiCount">0</h3><p>Selesai</p></div></div>
+                </div>
+                <div class="recent"><h3>Order Terbaru</h3><table><thead><tr><th>ID</th><th>Customer</th><th>Layanan</th><th>Berat</th><th>Total</th><th>Status</th><th>Tanggal</th></tr></thead><tbody id="recentOrders"></tbody></table></div>
+            </div>
+
+            <!-- Orders Tab -->
+            <div id="ordersTab" class="tab">
+                <div class="search-bar">
+                    <input type="text" id="searchInput" placeholder="Cari ID atau Nama...">
+                    <select id="statusFilter"><option value="all">Semua Status</option><option value="Antri">Antri</option><option value="Diproses">Diproses</option><option value="Selesai">Selesai</option></select>
+                    <button id="refreshBtn"><i class="fas fa-sync-alt"></i></button>
+                </div>
+                <div class="table-wrapper">
+                    <table><thead><tr><th>ID</th><th>Nama</th><th>No. HP</th><th>Layanan</th><th>Berat</th><th>Total</th><th>Status</th><th>Pembayaran</th><th>Aksi</th></tr></thead>
+                    <tbody id="allOrders"></tbody></table>
+                </div>
+            </div>
+
+            <!-- Add Order Tab -->
+            <div id="addTab" class="tab">
+                <div class="form-card">
+                    <h3>Tambah Order Baru</h3>
+                    <div class="form-row">
+                        <div class="form-group"><label>ID Laundry</label><input type="text" id="newId" placeholder="Contoh: QL-001"></div>
+                        <div class="form-group"><label>Nama Customer</label><input type="text" id="newName" placeholder="Nama lengkap"></div>
+                        <div class="form-group"><label>No. Telepon</label><input type="text" id="newPhone" placeholder="Contoh: 08123456789"></div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group"><label>Layanan</label><select id="newService"><option value="Cuci Kering">Cuci Kering (Rp8.000/kg)</option><option value="Cuci Setrika" selected>Cuci Setrika (Rp11.000/kg)</option><option value="Express 4 Jam">Express 4 Jam (Rp18.000/kg)</option></select></div>
+                        <div class="form-group"><label>Berat (kg)</label><input type="number" id="newWeight" placeholder="Contoh: 5" step="0.5"></div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group"><label>Status</label><select id="newStatus"><option value="Antri">Antri</option><option value="Diproses">Diproses</option><option value="Selesai">Selesai</option></select></div>
+                        <div class="form-group"><label>Status Pembayaran</label><select id="newPayment"><option value="Belum Lunas">Belum Lunas</option><option value="Lunas">Lunas</option></select></div>
+                    </div>
+                    <div class="form-group"><label>Catatan (opsional)</label><textarea id="newNote" rows="3" placeholder="Contoh: Pakai pewangi lavender, hati-hati dengan baju batik..."></textarea></div>
+                    <div class="total-preview" id="totalPreview">Total: Rp 0</div>
+                    <button id="submitOrder">Simpan Order</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="admin.js"></script>
+</body>
+</html>
